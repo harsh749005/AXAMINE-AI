@@ -1,17 +1,18 @@
 import React from "react";
 import HomeAboutPic from "../../assets/health/facilities-9.webp";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import CountUp from "../../Components/ReactBits/Count/CountUp";
+import { RiHeartPulseLine } from "react-icons/ri";
 function HomeAbout() {
   return (
     <section id="home-about" className="home-about section">
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <div className="row align-items-center">
-
           <motion.div
-          initial={{ x: -150, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
+            initial={{ x: -150, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
             className="col-lg-6 mb-5 mb-lg-0"
             data-aos="fade-right"
             data-aos-delay="200"
@@ -33,30 +34,54 @@ function HomeAbout() {
 
               <div className="stats-grid">
                 <div className="stat-item">
-                  <div
+                  {/* <div
                     className="stat-number purecounter"
                     data-purecounter-start="0"
                     data-purecounter-end="15000"
                     data-purecounter-duration="1"
-                  ></div>
+                  ></div> */}
+                  <CountUp
+                    from={0}
+                    to={15000}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text stat-number purecounter"
+                  />
                   <div className="stat-label">Patients Served</div>
                 </div>
                 <div className="stat-item">
-                  <div
+                  {/* <div
                     className="stat-number purecounter"
                     data-purecounter-start="0"
                     data-purecounter-end="25"
                     data-purecounter-duration="1"
-                  ></div>
+                  ></div> */}
+                  <CountUp
+                    from={0}
+                    to={25}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text stat-number purecounter"
+                  />
                   <div className="stat-label">Years of Excellence</div>
                 </div>
                 <div className="stat-item">
-                  <div
+                  {/* <div
                     className="stat-number purecounter"
                     data-purecounter-start="0"
                     data-purecounter-end="50"
                     data-purecounter-duration="1"
-                  ></div>
+                  ></div> */}
+                  <CountUp
+                    from={0}
+                    to={50}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text stat-number purecounter"
+                  />
                   <div className="stat-label">Medical Specialists</div>
                 </div>
               </div>
@@ -69,12 +94,15 @@ function HomeAbout() {
             </div>
           </motion.div>
 
-          <motion.div 
-          initial={{ x: 150, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+          <motion.div
+            initial={{ x: 150, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="col-lg-6"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
             <div className="about-visual">
               <div className="main-image">
                 <img
@@ -86,7 +114,8 @@ function HomeAbout() {
               <div className="floating-card">
                 <div className="card-content">
                   <div className="icon">
-                    <i className="bi bi-heart-pulse"></i>
+                    <RiHeartPulseLine size={24} color="blue"/>
+                    {/* <i className="bi bi-heart-pulse"></i> */}
                   </div>
                   <div className="card-text">
                     <h4>24/7 Emergency Care</h4>
@@ -102,7 +131,6 @@ function HomeAbout() {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

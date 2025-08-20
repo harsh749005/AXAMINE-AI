@@ -1,17 +1,21 @@
 import React from "react";
 import heroPic from "../../assets/health/staff-7.webp";
 import { motion } from "framer-motion";
+import CountUp from "../../Components/ReactBits/Count/CountUp";
+import { SlCalender } from "react-icons/sl";
+import { IoPlayCircleOutline } from "react-icons/io5";
+import { FaStar } from "react-icons/fa6";
 function Hero() {
   return (
     <section id="hero" className="hero section">
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <div className="row align-items-center">
-
           <motion.div
-          initial={{x:-200,opacity:0}}
-          animate={{x:0,opacity:1}}
-          transition={{duration:0.8,ease:"easeOut"}}
-          className="col-lg-6">
+            initial={{ x: -200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="col-lg-6"
+          >
             <div className="hero-content">
               <div
                 className="trust-badges mb-4"
@@ -57,36 +61,60 @@ function Hero() {
               >
                 <div className="stat-item">
                   <h3>
-                    <span
+                    {/* <span
                       data-purecounter-start="0"
                       data-purecounter-end="15"
                       data-purecounter-duration="2"
                       className="purecounter"
-                    ></span>
+                    ></span> */}
+                    <CountUp
+                      from={0}
+                      to={15}
+                      separator=","
+                      direction="up"
+                      duration={1}
+                      className="count-up-text"
+                    />
                     +
                   </h3>
                   <p>Years Experience</p>
                 </div>
                 <div className="stat-item">
                   <h3>
-                    <span
+                    {/* <span
                       data-purecounter-start="0"
                       data-purecounter-end="5000"
                       data-purecounter-duration="2"
                       className="purecounter"
-                    ></span>
+                    ></span> */}
+                    <CountUp
+                      from={0}
+                      to={5000}
+                      separator=","
+                      direction="up"
+                      duration={1}
+                      className="count-up-text"
+                    />
                     +
                   </h3>
                   <p>Patients Treated</p>
                 </div>
                 <div className="stat-item">
                   <h3>
-                    <span
+                    {/* <span
                       data-purecounter-start="0"
                       data-purecounter-end="50"
                       data-purecounter-duration="2"
                       className="purecounter"
-                    ></span>
+                    ></span> */}
+                    <CountUp
+                      from={0}
+                      to={50}
+                      separator=","
+                      direction="up"
+                      duration={1}
+                      className="count-up-text"
+                    />
                     +
                   </h3>
                   <p>Medical Experts</p>
@@ -105,7 +133,8 @@ function Hero() {
                   href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                   className="btn btn-outline glightbox"
                 >
-                  <i className="bi bi-play-circle me-2"></i>
+                  <IoPlayCircleOutline size={24} style={{marginRight: "8px"}}/>
+                  {/* <i className="bi bi-play-circle me-2"></i> */}
                   Watch Our Story
                 </a>
               </div>
@@ -120,12 +149,17 @@ function Hero() {
             </div>
           </motion.div>
 
-          <motion.div 
-          initial={{x:200,opacity:0}}
-          animate={{x:0,opacity:1}}
-          transition={{duration:0.8,ease:"easeOut",delay:0.3}}
-          className="col-lg-6">
-            <div className="hero-visual" data-aos="fade-left" data-aos-delay="400">
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            className="col-lg-6"
+          >
+            <div
+              className="hero-visual"
+              data-aos="fade-left"
+              data-aos-delay="400"
+            >
               <div className="main-image">
                 <img
                   src={heroPic}
@@ -134,7 +168,8 @@ function Hero() {
                 />
                 <div className="floating-card appointment-card">
                   <div className="card-icon">
-                    <i className="bi bi-calendar-check"></i>
+                    <SlCalender size={24} />
+                    {/* <i className="bi bi-calendar-check"></i> */}
                   </div>
                   <div className="card-content">
                     <h6>Next Available</h6>
@@ -145,11 +180,16 @@ function Hero() {
                 <div className="floating-card rating-card">
                   <div className="card-content">
                     <div className="rating-stars">
+                      {/* <i className="bi bi-star-fill"></i>
                       <i className="bi bi-star-fill"></i>
                       <i className="bi bi-star-fill"></i>
                       <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
+                      <i className="bi bi-star-fill"></i> */}
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
                     </div>
                     <h6>4.9/5</h6>
                     <small></small>
@@ -163,7 +203,6 @@ function Hero() {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>
