@@ -13,12 +13,15 @@ function Footer() {
           <div className="row align-items-start">
             <div className="col-lg-5">
               <div className="brand-section">
-                <a
+                {/* <a
                   href="index.html"
                   className="logo d-flex align-items-center mb-4"
                 >
                   <span className="sitename">Axamine ai</span>
-                </a>
+                </a> */}
+                  <div style={{backgroundColor:"black",width:"400px",marginBottom:"10px"}}>
+                    <img src="./axamine_logo.png" alt="" style={{objectFit:"cover",width:"100%"}}/>
+                  </div>
                 <p className="brand-description">
                   Axamine AI is an advanced diagnostic system that
                   revolutionizes healthcare by combining artificial intelligence

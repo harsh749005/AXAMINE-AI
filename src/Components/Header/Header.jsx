@@ -81,7 +81,7 @@ function Header() {
                 )
               }
               
-              <li className="dropdown">
+              {/* <li className="dropdown">
                 <Link to="#">
                   <span>More Pages</span>{" "}
                   <i className="bi bi-chevron-down toggle-dropdown"></i>
@@ -115,8 +115,8 @@ function Header() {
                     <Link to="/404">404</Link>
                   </li>
                 </ul>
-              </li>
-              <li className="dropdown">
+              </li> */}
+              {/* <li className="dropdown">
                 <Link to="#">
                   <span>Dropdown</span>{" "}
                   <i className="bi bi-chevron-down toggle-dropdown"></i>
@@ -158,7 +158,7 @@ function Header() {
                     <Link to="#">Dropdown 4</Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
