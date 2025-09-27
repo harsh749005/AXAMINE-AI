@@ -1,5 +1,10 @@
 import React from "react";
+import { logout } from "../../utils/authHelpers";
+import { useAuth } from "../../contexts/AuthContext";
+import { Link } from "react-router-dom";
 function Header() {
+  const { currentUser } = useAuth();
+  console.log("User details : ",currentUser);
   return (
     <header id="header" className="header fixed-top">
       <div className="topbar d-flex align-items-center dark-background">
@@ -28,109 +33,126 @@ function Header() {
 
       <div className="branding d-flex align-items-cente">
         <div className="container position-relative d-flex align-items-center justify-content-between">
-          <a href="index.html" className="logo d-flex align-items-center">
+          <Link to="/" className="logo d-flex align-items-center">
             <h1 className="sitename">Axamine AI </h1>
-          </a>
+          </Link>
 
           <nav id="navmenu" className="navmenu">
             <ul>
               <li>
-                <a href="index.html" className="active">
+                <Link to="/" className="active">
                   Home
+                </Link>
+              </li>
+              <li>
+                <a 
+                  href="#home-about" 
+                  // onClick={(e) => {
+                  //   e.preventDefault();
+                  //   const element = document.getElementById('home-about');
+                  //   if (element) {
+                  //     element.scrollIntoView({ behavior: 'smooth' });
+                  //   }
+                  // }}
+                >
+                  About
                 </a>
               </li>
               <li>
-                <a href="about.html">About</a>
+                <Link to="/departments">Departments</Link>
               </li>
               <li>
-                <a href="departments.html">Departments</a>
+                <Link to="/services">Services</Link>
               </li>
               <li>
-                <a href="services.html">Services</a>
-              </li>
-              <li>
-                <a href="doctors.html">Doctors</a>
+                <Link to="/doctors">Doctors</Link>
               </li>
               <li className="dropdown">
-                <a href="#">
+                <Link to="#">
                   <span>More Pages</span>{" "}
                   <i className="bi bi-chevron-down toggle-dropdown"></i>
-                </a>
+                </Link>
                 <ul>
                   <li>
-                    <a href="department-details.html">Department Details</a>
+                    <Link to="/department-details">Department Details</Link>
                   </li>
                   <li>
-                    <a href="service-details.html">Service Details</a>
+                    <Link to="/service-details">Service Details</Link>
                   </li>
                   <li>
-                    <a href="appointment.html">Appointment</a>
+                    <Link to="/appointment">Appointment</Link>
                   </li>
                   <li>
-                    <a href="testimonials.html">Testimonials</a>
+                    <Link to="/testimonials">Testimonials</Link>
                   </li>
                   <li>
-                    <a href="faq.html">Frequently Asked Questions</a>
+                    <Link to="/faq">Frequently Asked Questions</Link>
                   </li>
                   <li>
-                    <a href="gallery.html">Gallery</a>
+                    <Link to="/gallery">Gallery</Link>
                   </li>
                   <li>
-                    <a href="terms.html">Terms</a>
+                    <Link to="/terms">Terms</Link>
                   </li>
                   <li>
-                    <a href="privacy.html">Privacy</a>
+                    <Link to="/privacy">Privacy</Link>
                   </li>
                   <li>
-                    <a href="404.html">404</a>
+                    <Link to="/404">404</Link>
                   </li>
                 </ul>
               </li>
               <li className="dropdown">
-                <a href="#">
+                <Link to="#">
                   <span>Dropdown</span>{" "}
                   <i className="bi bi-chevron-down toggle-dropdown"></i>
-                </a>
+                </Link>
                 <ul>
                   <li>
-                    <a href="#">Dropdown 1</a>
+                    <Link to="#">Dropdown 1</Link>
                   </li>
                   <li className="dropdown">
-                    <a href="#">
+                    <Link to="#">
                       <span>Deep Dropdown</span>{" "}
                       <i className="bi bi-chevron-down toggle-dropdown"></i>
-                    </a>
+                    </Link>
                     <ul>
                       <li>
-                        <a href="#">Deep Dropdown 1</a>
+                        <Link to="#">Deep Dropdown 1</Link>
                       </li>
                       <li>
-                        <a href="#">Deep Dropdown 2</a>
+                        <Link to="#">Deep Dropdown 2</Link>
                       </li>
                       <li>
-                        <a href="#">Deep Dropdown 3</a>
+                        <Link to="#">Deep Dropdown 3</Link>
                       </li>
                       <li>
-                        <a href="#">Deep Dropdown 4</a>
+                        <Link to="#">Deep Dropdown 4</Link>
                       </li>
                       <li>
-                        <a href="#">Deep Dropdown 5</a>
+                        <Link to="#">Deep Dropdown 5</Link>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <a href="#">Dropdown 2</a>
+                    <Link to="#">Dropdown 2</Link>
                   </li>
                   <li>
-                    <a href="#">Dropdown 3</a>
+                    <Link to="#">Dropdown 3</Link>
                   </li>
                   <li>
-                    <a href="#">Dropdown 4</a>
+                    <Link to="#">Dropdown 4</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="contact.html">Contact</a>
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li>
+                <p></p>
+              </li>
+              <li style={{cursor:"pointer"}} onClick={logout}>
+                <Link>Logout</Link>
               </li>
             </ul>
             <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
