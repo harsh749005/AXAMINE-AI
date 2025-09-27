@@ -64,9 +64,23 @@ function Header() {
               <li>
                 <Link to="/services">Services</Link>
               </li>
+              {
+                currentUser &&(
+
               <li>
                 <Link to="/doctors">Doctors</Link>
               </li>
+                )
+              }
+                            {
+                currentUser &&(
+
+              <li>
+                <Link to="/chatbot">Chabot</Link>
+              </li>
+                )
+              }
+              
               <li className="dropdown">
                 <Link to="#">
                   <span>More Pages</span>{" "}
@@ -151,8 +165,30 @@ function Header() {
               <li>
                 <p></p>
               </li>
-              <li style={{cursor:"pointer"}} onClick={logout}>
-                <Link>Logout</Link>
+              <li style={{cursor:"pointer"}} >
+                {
+                  !currentUser && (
+
+                    <>
+                    <Link to={'/axamine'} style={{cursor:"pointer"}} >Sigin</Link>
+                    
+                    </>
+                  )
+                }
+              </li>
+              <li style={{cursor:"pointer"}} >
+                {
+                  currentUser ? (
+                    <span  style={{cursor:"pointer"}} onClick={logout}>Logout</span>
+                  ):(
+
+                    <>
+            
+                    <Link to={'/axamine'} style={{cursor:"pointer"}} >Signup</Link>
+                    
+                    </>
+                  )
+                }
               </li>
             </ul>
             <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>

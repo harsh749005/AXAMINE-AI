@@ -24,7 +24,7 @@ const AxamineLogin = () => {
   
       // Redirect based on role
       if (role === "doctor") {
-        navigate("/doctor-dashboard");
+        navigate("/doctorhome");
       } else if (role === "patient") {
         navigate("/");
       } 

@@ -7,6 +7,8 @@ import PrivateRoute from "./wrapper/PrivateRoute";
 import Home from "./Pages/Home/Home"; // ← make sure you import Home
 import AxamineLogin from "./auth/Axamine"; // Import the Axamine component
 import { HomeAbout } from "./Pages/pageIndex";
+import DocHome from "./Pages/Doctor/Home/DocHome";
+import Chatbot from "./Pages/Chatbot/ChatBot";
 
 function App() {
   return (
@@ -18,8 +20,24 @@ function App() {
         <Route
           path="/"
           element={
-            <PrivateRoute>
+            
               <Home />
+            
+          }
+        />
+                <Route
+          path="/doctorhome"
+          element={
+            <PrivateRoute>
+              <DocHome />
+            </PrivateRoute>
+          }
+        />
+                        <Route
+          path="/chatbot"
+          element={
+            <PrivateRoute>
+              <Chatbot />
             </PrivateRoute>
           }
         />
